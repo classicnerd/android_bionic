@@ -512,7 +512,7 @@ DEFAULT_MMAP_THRESHOLD       default: 256K
 #endif  /* ONLY_MSPACES */
 #endif  /* MSPACES */
 #ifndef MALLOC_ALIGNMENT
-#define MALLOC_ALIGNMENT ((size_t)8U)
+#define MALLOC_ALIGNMENT ((size_t)16U)
 #endif  /* MALLOC_ALIGNMENT */
 #ifndef FOOTERS
 #define FOOTERS 0

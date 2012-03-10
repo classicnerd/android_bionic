@@ -285,7 +285,7 @@ static void* libc_malloc_impl_handle = NULL;
  * align its guarding zones.
  */
 #ifndef MALLOC_ALIGNMENT
-#define MALLOC_ALIGNMENT ((size_t)8U)
+#define MALLOC_ALIGNMENT ((size_t)16U)
 #endif  /* MALLOC_ALIGNMENT */
 
 /* Initializes memory allocation framework once per process. */
