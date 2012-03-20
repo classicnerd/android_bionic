@@ -648,6 +648,9 @@ LOCAL_SRC_FILES := \
 LOCAL_C_INCLUDES := $(libc_common_c_includes)
 LOCAL_CFLAGS := $(libc_common_cflags) \
                 -DLIBC_STATIC
+ifneq ($(USE_MALLOC_ALIGNMENT),)
+    LOCAL_CFLAGS += -DMALLOC_ALIGNMENT=$(USE_MALLOC_ALIGNMENT)
+endif
 
 LOCAL_MODULE := libc_nomalloc
 LOCAL_WHOLE_STATIC_LIBRARIES := libc_common
@@ -684,6 +687,9 @@ include $(BUILD_STATIC_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_CFLAGS := $(libc_common_cflags)
+ifneq ($(USE_MALLOC_ALIGNMENT),)
+    LOCAL_CFLAGS += -DMALLOC_ALIGNMENT=$(USE_MALLOC_ALIGNMENT)
+endif
 LOCAL_C_INCLUDES := $(libc_common_c_includes)
 
 LOCAL_SRC_FILES := \
@@ -726,6 +732,9 @@ include $(CLEAR_VARS)
 LOCAL_CFLAGS := \
 	$(libc_common_cflags) \
 	-DMALLOC_LEAK_CHECK
+ifneq ($(USE_MALLOC_ALIGNMENT),)
+    LOCAL_CFLAGS += -DMALLOC_ALIGNMENT=$(USE_MALLOC_ALIGNMENT)
+endif
 
 LOCAL_C_INCLUDES := $(libc_common_c_includes)
 
